@@ -33,6 +33,10 @@ const NavBar = () => {
       menu: "Term Of Use",
       link: "/",
     },
+    {
+      menu: "Term Of Use",
+      link: "/",
+    },
   ];
 
   //USESTATE

@@ -46,7 +46,8 @@ export const ChatAppProvider = ({ children }) => {
       const userList = await contract.getAllAppUser();
       setUserList(userList);
     } catch (error) {
-      setError("Please install and connect your wallet");
+     // setError("Please install and connect your wallet");
+     console.log(error);
     }
   };
 
@@ -70,8 +71,8 @@ export const ChatAppProvider = ({ children }) => {
 
   const createAccount = async ({ name, accountAddress }) => {
     try {
-      if (name || accountAddress)
-        return setError("Name and AccountAddress , cannot be empty");
+      // if (name || accountAddress)
+      //   return setError("Name and AccountAddress , cannot be empty");
 
       const contract = await connectingWithContract();
       const getCreatedUser = await contract.createAccount(name);
@@ -88,8 +89,8 @@ export const ChatAppProvider = ({ children }) => {
 
   const addFriends = async ({ accountaddress, name }) => {
     try {
-      if (accountaddress || name)
-        return setError("address and name can't be emoty");
+      // if (accountaddress || name)
+      //   return setError("address and name can't be empty");
 
       const contract = await connectingWithContract();
       const addMyFriends = await contract.addFriend(address, name);
@@ -107,8 +108,8 @@ export const ChatAppProvider = ({ children }) => {
 
   const sendMessage = async ({ accountAddress, msg }) => {
     try {
-      if (accountAddress || msg)
-        return setError("address and name can't be empty");
+      // if (accountAddress || msg)
+      //   return setError("address and name can't be empty");
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(accountAddress, msg);
       setLoading(true);
@@ -141,6 +142,8 @@ export const ChatAppProvider = ({ children }) => {
         addFriends,
         sendMessage,
         readUser,
+        connectWallet,
+        CheckIfWalletConnected,
         accounts,
         userName,
         friendList,

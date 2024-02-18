@@ -13,3 +13,4 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+<!-- npm i -> npx hardhat node (in another terminal) -> npx hardhat --network localhost run scripts/deploy.js -->

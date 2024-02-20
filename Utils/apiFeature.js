@@ -6,7 +6,7 @@ import { sign } from "crypto";
 
 export const CheckIfWalletConnected = async () => {
   try {
-    if (!window.ethereum) return console.log("Install Metamsk");
+    if (!window.ethereum) return console.log("Install Metamask");
 
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
@@ -19,7 +19,7 @@ export const CheckIfWalletConnected = async () => {
 
 export const connectWallet = async () => {
   try {
-    if (!window.ethereum) return console.log("Install Metamsk");
+    if (!window.ethereum) return console.log("Install Metamask");
 
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
@@ -37,13 +37,13 @@ const fetchContract = (signerOrProvider) =>
 export const connectingWithContract = async () => {
   try {
     const web3modal = new web3Modal();
-    const connection = await web3Modal.connect();
+    const connection = await web3modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
 
     return contract;
-  } catch (error) {
+  } catch(error) {
     console.log(error);
   }
 };

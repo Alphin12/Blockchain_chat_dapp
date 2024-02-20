@@ -6,7 +6,7 @@ import { sign } from "crypto";
 
 export const CheckIfWalletConnected = async () => {
   try {
-    if (window.ethereum) return console.log("Install Metamsk");
+    if (!window.ethereum) return console.log("Install Metamsk");
 
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
@@ -19,7 +19,7 @@ export const CheckIfWalletConnected = async () => {
 
 export const connectWallet = async () => {
   try {
-    if (window.ethereum) return console.log("Install Metamsk");
+    if (!window.ethereum) return console.log("Install Metamsk");
 
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",

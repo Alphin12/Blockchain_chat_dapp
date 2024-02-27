@@ -28,7 +28,7 @@ const Model = ({openBox, title, address, head , info , smallinfo, image, functio
             <input type = 'text' placeholder={address || "Enter address.."} onChange={(e)=> setAccountAddress(e.target.value)}/>
           </div>
           <div className={Style.Model_box_right_name_btn}>
-            <button onClick={()=> functionName(name,address)}>
+            <button onClick={()=> functionName({name,AccountAddress})}>
               {""}
               <Image src={images.send} alt="send" width={30} height={30}/>
               {""}
@@ -43,6 +43,7 @@ const Model = ({openBox, title, address, head , info , smallinfo, image, functio
           </div>
         </div>)
         }
+        
       </div>
     </div>
   </div>);

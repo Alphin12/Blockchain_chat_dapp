@@ -39,7 +39,7 @@ const Filter = () => {
           Vitae voluptatibus ea maxime assumenda ipsam, voluptatum mollitia et laudantium cum, at molestiae aspernatur."
           smallinfo="Kindly select your Friend's name & Address"
           image={images.hero}
-          functionName={setAddFriend}/>
+          functionName={addFriend}/>
         </div>
       )}
     </div>

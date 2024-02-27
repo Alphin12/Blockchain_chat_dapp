@@ -93,9 +93,9 @@ export const ChatAppProvider = ({ children }) => {
       //   return setError("address and name can't be empty");
 
       const contract = await connectingWithContract();
-      const addMyFriends = await contract.addFriend(accountaddress, name);
+      const addMyFriends = await contract.addFriend(address, name);
       setLoading(true);
-      await addMyFriends.wait();
+      await addMyFriend.wait();
       setLoading(false);
       router.push("/");
       window.location.reload();

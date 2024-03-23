@@ -41,10 +41,10 @@ export const ChatAppProvider = ({ children }) => {
       setUserName(userName);
       //GET FRIEND LIST
       const friendList = await contract.getMyFriendList();
-      setFriendList(friendList);
+      setFriendLists(friendLists);
       //GET ALL APP USER
       const userList = await contract.getAllAppUser();
-      setUserList(userList);
+      setUserLists(userList);
     } catch (error) {
      // setError("Please install and connect your wallet");
      console.log(error);
@@ -70,6 +70,7 @@ export const ChatAppProvider = ({ children }) => {
   //CREATE ACCOUNT
 
   const createAccount = async ({ name, accountAddress }) => {
+    console.log(name);
     try {
       // if (name || accountAddress)
       //   return setError("Name and AccountAddress , cannot be empty");
